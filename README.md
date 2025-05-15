@@ -112,8 +112,11 @@ O projeto utiliza dois arquivos pré-treinados (que devem estar no diretório do
 ### Interface Web
 
 1 .Execute python **app.py**
+
 2. Acesse a interface web (normalmente em http://localhost:7860)
+
 3. Cole o texto da notícia a ser analisada
+
 4. O sistema retornará a classificação (FAKE ou REAL)
 
 ### Validação em Lote
