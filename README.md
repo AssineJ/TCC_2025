@@ -15,11 +15,10 @@ O projeto é composto por três principais arquivos:
 
 >[!IMPORTANT]
 >- Python 3.6+ instalado 
->- Gradio
->- Pandas
->- Scikit-learn
->- Joblib
->- Sistemas compatíveis: Windows, macOS e Linux
+>- RAM: 4GB (8GB recomendado)
+>- Armazenamento: 2GB livres
+>- SO: Windows 10+, macOS 10.14+, Ubuntu 18.04+
+>- Conexão: Internet para coleta de dados
 
 ##  Instalação
 
@@ -30,12 +29,25 @@ pip install -r requirements.txt
 ```
 O arquivo requirements.txt contém:
 ```
-gradio>=3.50.0
+gradio>=4.0.0
 pandas>=1.5.0
-scikit-learn>=1.0.0
-joblib>=1.1.0
-numpy>=1.20.0
-regex>=2022.1.18
+scikit-learn>=1.3.0
+joblib>=1.3.0
+numpy>=1.21.0
+requests>=2.28.0
+python-dotenv>=0.19.0
+```
+
+## Arquitetura do sistema
+
+```
+├── data_collection.py     # Coleta automatizada via NewsAPI
+├── preprocess_train.py    # Pré-processamento e preparação
+├── train_model.py         # Treinamento do modelo
+├── app.py                # Interface web Gradio
+├── validar_noticias.py   # Validação em lote
+├── feedback.py           # Sistema de feedback
+└── Tcc_teste4.py         # Pipeline completo
 ```
 
 ##  Componentes
@@ -108,6 +120,33 @@ O projeto utiliza dois arquivos pré-treinados (que devem estar no diretório do
 - tfidf_vectorizer.pkl: O vetorizador TF-IDF para transformar texto em vetores
 
 ## Como Usar
+
+### Clone e Instale
+
+```
+git clone <repository-url>
+cd fake-news-detector
+pip install -r requirements.txt
+```
+
+### Configure a API(Opiciona)
+
+```
+# Crie arquivo .env
+echo "NEWSAPI_KEY=sua_chave_aqui" > .env
+```
+
+### Prepare os Dados
+
+```
+# Com datasets existentes
+python Tcc_teste4.py
+
+# Com coleta nova
+python data_collection.py
+python preprocess_train.py
+python train_model.py
+```
 
 ### Interface Web
 
