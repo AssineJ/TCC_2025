@@ -1,0 +1,32 @@
+# Core
+fastapi==0.104.1
+uvicorn==0.24.0
+streamlit==1.28.0
+
+# Data processing
+pandas==2.0.3
+numpy==1.26.4
+
+# Machine Learning
+scikit-learn==1.3.2
+transformers==4.35.2
+torch==2.1.1
+joblib==1.3.2
+
+# Web scraping
+beautifulsoup4==4.12.2
+newspaper3k==0.2.8
+requests==2.31.0
+feedparser==6.0.10
+aiohttp==3.9.1
+async-timeout==4.0.3
+
+# Database
+psycopg2-binary==2.9.9
+python-multipart==0.0.9  # Atualizado para versão compatível
+
+# Gradio version compatível
+gradio==4.31.0
+
+# Outras dependências
+starlette==0.27.0
